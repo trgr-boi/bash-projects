@@ -1,10 +1,8 @@
 # /bin/bash
 
-echo "Enter your name:"
-read name
+read -p "Enter your name: " name
 
-echo "How old are you?"
-read age
+read -p "Enter your age: " age
 
 echo "Hello $name! You are $age years old."
 
