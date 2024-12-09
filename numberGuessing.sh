@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo "What is the max value?"
-read max
+read maxValue
 
-randomNumber=$((RANDOM % $max + 1)) 
+randomNumber=$((RANDOM % $maxValue + 1)) 
 
 inputNumber=0
 
-echo "Guess a number between 1 and $max:"
+echo "Guess a number between 1 and $maxValue:"
 
 counter=0
 while [ "$inputNumber" -ne "$randomNumber" ]; do
