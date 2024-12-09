@@ -2,22 +2,27 @@
 
 calcAdd() {
   output=$((number1 + number2))
+  method="+"
 }
 calcSub() {
   output=$((number1 - number2))
+  method="-"
 }
 calcMulti() {
   output=$((number1 * number2))
+  method="*"
 }
 calcDiv() {
   output=$((number1 / number2))
+  method="/"
 }
 calcMod() {
   output=$((number1 % number2))
+  method="%"
 }
 
 result() {
-  echo "$number1 + $number2 = $output"
+  echo "$number1 $method $number2 = $output"
 }
 
 echo "Welcome to calculator."
@@ -30,7 +35,6 @@ echo "2) Subtraction (-)"
 echo "3) Multiplication (*)"
 echo "4) Division (/)"
 echo "5) Modulus (%)"
-echo "6) Exit"
 read -p "Choose an option: " option
 
 read -p "Give number 2: " number2
@@ -55,10 +59,6 @@ case $option in
   5)
     calcMod
     result
-    ;;
-  6)
-    echo "Goodbye!"
-    break
     ;;
   *)
     echo "Invalid option, please try again!"
