@@ -1,15 +1,11 @@
 #!/bin/bash
-# opens a new window and creates a new file named "daynote-YYYY-mm-dd". not created until saved
-# change 'nvim' in osascript to change editor.
-current_datetime=$(date "+%Y-%m-%d_%H-%M-%S")
 
-file_path="$HOME/Documents/notes/daynote-$current_datetime.md"
+# script to create a new daynote. I set code to open vs-code. change to preffered editor.
+# use 'osascript' to open in new window if you use a terminal texteditor like nvim.
+# made on macos. I haven't tested it on linux yet.
 
-osascript <<EOF
-tell application "iTerm"
-    set newWindow to (create window with default profile)
-    tell newWindow's current session
-        write text "nvim \"$file_path\""
-    end tell
-end tell
-EOF
+current_datetime=$(date "+%Y-%m-%d_%H-%M")
+
+file_path="$HOME/path/to/notes/$current_datetime.md"
+
+code $file_path
