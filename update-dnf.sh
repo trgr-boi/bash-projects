@@ -19,7 +19,7 @@ check_updates() {
 }
 
 upgrade_system() {
-    run_task "${GREEN}Upgrading system${NC}" "sudo dnf upgrade -y"
+    run_task "${GREEN}Upgrading system${NC}" "sudo dnf upgrade y"
 }
 
 remove_unused() {
