@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Repositories to sync
+repos=(
+  # Path to repos you want to automatically commit and push
+  "/Path/to/repo-1"
+  "/Path/to/repo-2"
+  "/Path/to/repo-3"
+)
+
 spinner="/-\|"
 
 animate_spinner() {
@@ -26,14 +34,6 @@ run_with_spinner() {
 
     printf "\r%s... Done!\n" "$message"
 }
-
-# Repositories to sync
-repos=(
-  # Path to repos you want to automatically commit and push
-  "/Path/to/repo-1"
-  "/Path/to/repo-2"
-  "/Path/to/repo-3"
-)
 
 # Current date
 date=$(date +"%Y-%m-%d")
