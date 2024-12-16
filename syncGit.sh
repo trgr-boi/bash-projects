@@ -2,11 +2,15 @@
 
 # Repositories to sync
 repos=(
-  # Path to repos you want to automatically commit and push
   "/Path/to/repo-1"
   "/Path/to/repo-2"
   "/Path/to/repo-3"
 )
+
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+NC='\033[0m'
 
 spinner="/-\|"
 
@@ -43,11 +47,19 @@ sync_repo() {
     local repo="$1"
 
     if [ -d "$repo/.git" ]; then
-        echo ">>> Processing $repo..."
+        echo -e "${BLUE}>>> Processing $repo...${NC}"
         cd "$repo" || exit
 
+        # Pull from remote
+        run_with_spinner "Pulling latest changes " "git pull --rebase || echo -e '${YELLOW}Pull failed or no changes to pull${NC}'"
+        
+        # Add changes
         run_with_spinner "Adding files to Git " "git add ."
-        run_with_spinner "Committing changes " "git commit -m 'sync $date' || echo 'Nothing to commit'"
+        
+        # Commit changes
+        run_with_spinner "Committing changes " "git commit -m 'sync $date' || echo '${YELLOW}Nothing to commit${NC}'"
+        
+        # Push changes
         run_with_spinner "Pushing to remote " "git push"
         echo
     else
@@ -56,10 +68,10 @@ sync_repo() {
 }
 
 # Main script
-echo ">>> Syncing repos"
+echo -e "${YELLOW}>>> Syncing repos${NC}"
 
 for repo in "${repos[@]}"; do
     sync_repo "$repo"
 done
 
-echo ">>> Sync completed!"
+echo -e "${GREEN}>>> Sync completed!${NC}"

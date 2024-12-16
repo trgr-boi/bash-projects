@@ -2,6 +2,10 @@
 
 spinner="/-\|"
 
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
 animate_spinner() {
     local message="$1"  
     local i=0
@@ -45,10 +49,10 @@ doctor_brew() {
 }
 
 # Main script
-echo ">>> Brew Maintenance"
+echo -e "${YELLOW}>>> Brew Maintenance${NC}"
 update_brew
 upgrade_brew
 cleanup_brew
 doctor_brew
 
-echo ">>> All tasks completed!"
+echo -e "${GREEN}>>> All tasks completed!${NC}"
