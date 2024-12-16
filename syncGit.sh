@@ -50,16 +50,12 @@ sync_repo() {
         echo -e "${BLUE}>>> Processing $repo...${NC}"
         cd "$repo" || exit
 
-        # Pull from remote
         run_with_spinner "Pulling latest changes " "git pull --rebase || echo -e '${YELLOW}Pull failed or no changes to pull${NC}'"
         
-        # Add changes
         run_with_spinner "Adding files to Git " "git add ."
         
-        # Commit changes
         run_with_spinner "Committing changes " "git commit -m 'sync $date' || echo '${YELLOW}Nothing to commit${NC}'"
         
-        # Push changes
         run_with_spinner "Pushing to remote " "git push"
         echo
     else
