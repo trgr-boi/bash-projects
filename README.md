@@ -2,7 +2,7 @@
 These are my scripts I made to make my (and maybe your) life easier!
 ## overview 
 - [syncGit](#syncgit)
-- [update dnf]()
+- [update dnf](#update-dnf)
 - [update homebrew](#update-homebrew)
 ## SyncGit
 With this script, I can easily commit and push the repos I want to push on a regular basis. I use github to view my obsidian notes on my phone since I don't need to edit them when I'm on the go. I might add a pull command so I can also use this to pull changes I made on a different computor.  
@@ -19,10 +19,11 @@ repos=(
 )
 ```
 ##### TODO
-- [ ] Add pull command
+- [x] Add pull command
 
 ## Update DNF
 A script to update dnf. Uses `dnf check-update`, `dnf upgrade -y`, `dnf upgrade -y` & `dnf clean all`. To my knowledge is that all I need to update.  
+Change the commands for your packagemanager.
 I added colors for eyecandy. No loading animation on this one because it didn't really work with how dnf shows downloading.
 ## Update Homebrew
 A script to update homebrew. This uses the `brew update`, `brew upgrade`, `brew cleanup` and `brew doctor` commands.  
