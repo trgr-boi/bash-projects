@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the trash path
-trashPath="~/.Trash"
+trashPath="$HOME/.Trash"
 
 # Check if a file path argument is provided
 if [ -z "$1" ]; then
