@@ -18,15 +18,23 @@ if [ ! -e "$selected_file" ]; then
   exit 1
 fi
 
+# Filan conformation 
+echo "Are you sure you want to move $(basename "$selected_file") to trash? (y/n)"
+read -r confirm
+if [ "$confirm" != "y" ]; then
+  echo "Cancelled."
+  exit 1
+fi
+
 # Ensure the Trash directory exists
 mkdir -p $trashPath
 
 # Move the file to the trash
-mv -f "$selected_file" $trashPath
+mv -f "$selected_file" "$trashPath"
 
 if [ $? -eq 0 ]; then
-  echo "Moved $selected_file to trash."
+  echo "Moved $(basename "$selected_file") to trash."
 else
-  echo "Failed to move $selected_file to trash."
+  echo "Failed to move $(basename "$selected_file") to trash."
   exit 1
 fi
