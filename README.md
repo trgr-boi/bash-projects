@@ -8,6 +8,7 @@ These are my scripts I made to make my (and maybe your) life easier!
 - [daynote](#daynote)
 - [braindump](#braindump) 
 - [moveto-trash](#moveto-trash)
+- [todo](#todo)
 ## SyncGit
 With this script, I can easily commit and push the repos I want to push on a regular basis. I use github to view my obsidian notes on my phone since I don't need to edit them when I'm on the go. I pulls first so it will sync the changes you make on another device.   
 The commit message will always be "sync YYY-mm-ddd" so it is not that handy if you really want to now what was synced. I don't know if I would use it for larger projects because of this.  
@@ -45,10 +46,24 @@ Unlike the Daynote script, this one does everything inside the same terminal win
 But for me that kinda is the point. I made it to quickly get stuff from my mind before I forget, so I can process it later in a better texteditor.  
 It saves in Markdown so you can use all the markdown synthax. It won't show in terminal but it will in your editor!
 ## Moveto-trash
-Moves the file that's been given as argument to the trash folder. Default `.Trash`. Change this to what you want.
+Moves the file that's been given as argument to the trash folder. Default `.Trash`. Change this to what you want. You should create an alias run the script!
 ### Usage
-`./movetotrash.sh <file>`
+`./moveto-trash.sh <file>`
 ### todo
 - [ ] Add option to view trash
 - [ ] Add option to empty trash
 - [ ] Add option to undo trash item
+## ToDo
+A script that  allows you to create lists of todo-lists. The todo-lists should be stored in your notes directory. 
+I would recommend by adding an alias to run this script!
+### Usage
+```
+todo <command> [<args>]
+Commands:
+  list                List all todo lists
+  <name>              View the specified todo list
+  create <name>       Create a new todo list
+  trash <name>        Move the specified todo list to trash
+```
+### Customization
+You can easily change the variables at the start of the scripts.
