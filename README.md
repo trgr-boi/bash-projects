@@ -46,24 +46,28 @@ Unlike the Daynote script, this one does everything inside the same terminal win
 But for me that kinda is the point. I made it to quickly get stuff from my mind before I forget, so I can process it later in a better texteditor.  
 It saves in Markdown so you can use all the markdown synthax. It won't show in terminal but it will in your editor!
 ## Moveto-trash
-Moves the file that's been given as argument to the trash folder. Default `.Trash`. Change this to what you want. You should create an alias run the script!
+Moves the file that's been given as argument to the trash folder. Default `.Trash`. Change this to what you want. **You should create an alias run the script!**  
+I use it mainly with ranger so I mapped it to 'dd' with `map dd shell -w bash ~/.config/ranger/commands/movetotrash.sh %f`.
 ### Usage
 `./moveto-trash.sh <file>`
-### todo
 - [ ] Add option to view trash
 - [ ] Add option to empty trash
 - [ ] Add option to undo trash item
 ## ToDo
 A script that  allows you to create lists of todo-lists. The todo-lists should be stored in your notes directory. 
-I would recommend by adding an alias to run this script!
+**I would recommend by adding an alias to run this script!** E.g. I use 'todo' so I can run it like 'todo list' like you see in the usage below.
 ### Usage
 ```
 todo <command> [<args>]
 Commands:
   list                List all todo lists
   <name>              View the specified todo list
+  edit <name>         Edit the specified todo list in $EDITOR
   create <name>       Create a new todo list
   trash <name>        Move the specified todo list to trash
 ```
+- You do need to edit the list after you finish a task. There is no way of using commands *yet*.
+- [ ] Add a way to check tasks with command
 ### Customization
 You can easily change the variables at the start of the scripts.
+Each new note is created with a template. You can change this. Template for todo list between `cat <<EOL > "$todo_file"` and `EOL`

@@ -2,6 +2,13 @@
 
 current_datetime=$(date "+%Y-%m-%d_%H-%M")
 
-file_path="$HOME/notes/\!-Daynotes/$current_datetime.md"
+# VARIABLES **CHANGE THESE**
+FILE_TYPE="md"
+EDITOR="nvim"
+DAYNOTE_DIR="$HOME/Notes/Daynotes/"
+DAYNOTE_FILE="$DAYNOTE_DIR/$current_datetime.$FILE_TYPE"
 
-code $file_path
+# Create folder if it doesn't exist
+mkdir -p "$DAYNOTE_DIR"
+
+$EDITOR $DAYNOTE_FILE
