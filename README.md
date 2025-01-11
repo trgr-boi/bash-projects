@@ -6,6 +6,7 @@ These are my scripts I made to make my (and maybe your) life easier!
 - [update homebrew](#update-homebrew)
 - [promodoro timer](#promodoro-timer)
 - [daynote](#daynote)
+- [daynote-obsidian][#daynote-obsidian]
 - [braindump](#braindump) 
 - [moveto-trash](#moveto-trash)
 - [todo](#todo)
@@ -40,6 +41,28 @@ Don't know how to do this on linux but you can remove the `osascript` lines. It 
 ## Daynote
 A simple script for people who like to take daynotes. It opens it in vs-code but you could easily change this to vim, nvim,... **You should change the notes location to yours before using!**
 I might make another one to work the same as the braindump.
+## Daynote-obsidian
+An upgraded script from the very simple Daynotes script. This one makes use of the obsidian daily notes function.
+### Requirements
+- Obsidian
+- Daily note enabled
+- URI needs to work
+### Usage
+````
+    Usage: $ALIAS_NAME [OPTION]
+    Open today's daynote in Obsidian.
+      -p  print today's daynote"
+      -p +1  print tomorrow's daynote"
+      -p -1  print yesterday's daynote"
+      +1  open tomorrow's daynote in Obsidian"
+      -1  open yesterday's daynote in Obsidian"
+      -h  display this help and exit"
+````
+### Customization
+You can change the variables at the start of the script!  
+`VAULT` should be the name of your obsidian vault.  
+`DAYNOTE_DIR` is the path to the folder where your daynotes are stored (should be inside your vault)  
+`ALIAS_NAME` is the **alias** you chose to set to run this script. I chose `dnote` because I can write it quickly. **Change this if you set a different alias**. This is only for esthetic purposes!
 ## Braindump
 A script that allows you to make quick braindumps from the terminal. **Change the notes path before using!** You can make this for every type of note by changing *braindump* to the type of name you want. 
 Unlike the Daynote script, this one does everything inside the same terminal window. With the downside of not being able to go back to the previous line after pressing `enter`.  
