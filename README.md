@@ -6,7 +6,7 @@ These are my scripts I made to make my (and maybe your) life easier!
 - [update homebrew](#update-homebrew)
 - [promodoro timer](#promodoro-timer)
 - [daynote](#daynote)
-- [daynote-obsidian][#daynote-obsidian]
+- [daynote-obsidian](#daynote-obsidian)
 - [braindump](#braindump) 
 - [moveto-trash](#moveto-trash)
 - [todo](#todo)
